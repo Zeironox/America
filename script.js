@@ -1,5 +1,7 @@
-document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", () => {
-        alert("Hai cliccato su: " + card.querySelector("h2").textContent);
+document.addEventListener("scroll", function() {
+    document.querySelectorAll(".parallax").forEach(section => {
+        let speed = 0.5;
+        let yOffset = window.scrollY * speed;
+        section.style.backgroundPosition = `center ${yOffset}px`;
     });
 });
