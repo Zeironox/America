@@ -1,7 +1,10 @@
-document.addEventListener("scroll", function() {
-    document.querySelectorAll(".parallax").forEach(section => {
-        let speed = 0.5;
-        let yOffset = window.scrollY * speed;
-        section.style.backgroundPosition = `center ${yOffset}px`;
+// Aggiungi una funzionalità di scroll liscio per il menu di navigazione
+document.querySelectorAll('a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
